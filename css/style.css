@@ -1,5 +1,11 @@
 /********** Template CSS **********/
 
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -406,6 +412,9 @@
 .service .service-item img {
     margin-top: -45px;
     padding-left: 45px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .service .service-item * {
@@ -608,4 +617,50 @@
 
 .copyright a:hover {
     color: var(--bs-primary);
+}
+
+/* Major Products Section - Consistent Image Dimensions */
+.bg-light .container .row .col-md-6 img.img-fluid.rounded.shadow {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Footer Gallery - Consistent Image Dimensions */
+.footer .row.g-1 img.img-fluid {
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ISO Certificate Section - Responsive Fix */
+.container-fluid.bg-light .container .row {
+    overflow-x: hidden;
+}
+
+.container-fluid.bg-light .container .row p,
+.container-fluid.bg-light .container .row h1,
+.container-fluid.bg-light .container .row h5 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Ensure images don't cause horizontal overflow */
+.container-fluid.bg-light img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile responsiveness for ISO section */
+@media (max-width: 768px) {
+    .container-fluid.bg-light .row.g-5 {
+        gap: 1.5rem !important;
+    }
+
+    .container-fluid.bg-light .bg-white.p-4 {
+        padding: 1rem !important;
+    }
 }
